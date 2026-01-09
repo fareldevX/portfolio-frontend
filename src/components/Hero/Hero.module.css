@@ -1,0 +1,112 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: clamp(3rem, 8vw, 12rem);
+  margin: 4rem auto;
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: max-content;
+  }
+}
+
+.heroLabel {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  padding: 4px 12px;
+  margin-bottom: 24px;
+  background-color: var(--bg-page);
+  color: var(--accent);
+  border: 1px solid var(--border-semibold);
+  border-radius: 18px;
+  gap: 8px;
+}
+
+.heroLabel span {
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+.heroContent {
+  max-width: 600px;
+  width: 100%;
+  padding: 24px;
+  line-height: 1.2;
+}
+
+.heroContent h2 {
+  font-size: clamp(3.4rem, 6vw, 4.2rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.heroContent h2 span {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.heroContent p {
+  font-size: clamp(0.9rem, 5vw, 1rem);
+  font-weight: 500;
+  margin-top: 14px;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+
+.heroActions {
+  margin-top: 30px;
+  display: flex;
+  gap: 12px;
+}
+
+.heroVisual {
+  position: relative;
+  place-items: center;
+}
+
+.heroVisual::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  background: radial-gradient(circle at center, var(--accent), transparent 70%);
+  filter: blur(60px);
+  z-index: 0;
+}
+
+.heroImage {
+  position: relative;
+  top: 0;
+  width: 360px;
+  height: 460px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border-semibold);
+  transform: rotate(-4deg);
+  transition: transform 0.4s ease-in-out;
+}
+
+.heroImage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("./../../assets/image.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: scale(1);
+  transition: transform 0.6s ease;
+}
+
+.heroImage:hover {
+  transform: rotate(0deg);
+}
+
+.heroImage:hover::before {
+  transform: scale(1.08);
+}

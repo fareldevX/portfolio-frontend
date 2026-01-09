@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  /* BACKGROUNDS */
+  --bg-page: #f8fafc;
+  /* Slate-50 */
+  --bg-section: #ffffff;
+  /* White */
+  --bg-surface: #f1f5f9;
+  /* Slate-100 */
+  --bg-primary: #e2e8f0;
+  /* Slate-200 */
+
+  /* ACCENT BACKGROUNDS (For Contact, Footer, etc.) */
+  --bg-secondary: #4f46e5;
+  /* Indigo-600 */
+  --bg-form: #4338ca;
+  /* Indigo-700 */
+  --bg-input: #3730a3;
+  /* Indigo-800 */
+
+  /* NAVBAR */
+  --bg-navbar: rgba(255, 255, 255, 0.8);
+  --bg-navbar-open: rgba(255, 255, 255, 0.95);
+
+  /* STATUS */
+  --bg-error: #ef4444;
+  /* Red-500 */
+
+  /* TEXT - STANDARD */
+  --text-primary: #0f172a;
+  /* Slate-900 */
+  --text-secondary: #475569;
+  /* Slate-600 */
+
+  /* TEXT - INVERSE (For dark backgrounds in light mode) */
+  --text-inverse-primary: #ffffff;
+  --text-inverse-secondary: #cbd5e1;
+  /* Slate-300 */
+
+  /* ACCENT */
+  --accent: #6366f1;
+  /* Indigo-500 */
+
+  /* BORDERS */
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-semibold: rgba(0, 0, 0, 0.15);
+  --border-navbar: rgba(0, 0, 0, 0.1);
+  --border-inverse: rgba(255, 255, 255, 0.2);
+
+  /* COMPONENTS */
+  --chip-bg-primary: #4f46e5;
+  --chip-bg-primary-hover: #4338ca;
+  --chip-text-primary: #ffffff;
+
+  --chip-bg-secondary: #e0e7ff;
+  --chip-bg-secondary-hover: #c7d2fe;
+  --chip-text-secondary: #4338ca;
+
+  --btn-bg-primary: #4f46e5;
+  --btn-bg-primary-hover: #4338ca;
+  --btn-text-primary: #ffffff;
+
+  --btn-bg-secondary: #94a3b8;
+  --btn-bg-secondary-hover: #64748b;
+  --btn-text-secondary: #ffffff;
+}
+
+.dark {
+  /* DARK MODE REFINEMENTS */
+  --color-indigo100: #e0e7ff;
+  --color-indigo200: #c7d2fe;
+  --color-indigo900: #312e81;
+
+  /* BACKGROUNDS */
+  --bg-page: #020617;
+  /* Slate-950 */
+  --bg-section: #0f172a;
+  /* Slate-900 */
+  --bg-surface: #1e293b;
+  /* Slate-800 */
+  --bg-primary: #0f172a;
+  /* Slate-900 dup for consistency */
+
+  /* ACCENT BACKGROUNDS (Dark mode versions, slightly desaturated or darker) */
+  --bg-secondary: #1e1b4b;
+  /* Indigo-950 - Deep dark blue for sections */
+  --bg-form: #312e81;
+  /* Indigo-900 */
+  --bg-input: #3730a3;
+  /* Indigo-800 */
+
+  /* NAVBAR */
+  --bg-navbar: rgba(15, 23, 42, 0.7);
+  --bg-navbar-open: rgba(15, 23, 42, 0.95);
+
+  /* STATUS */
+  --bg-error: #ef4444;
+
+  /* TEXT - STANDARD */
+  --text-primary: #f8fafc;
+  /* Slate-50 */
+  --text-secondary: #94a3b8;
+  /* Slate-400 */
+
+  /* TEXT - INVERSE (On dark mode, this might just be standard text, 
+     but for consistent usage in "colored" sections, we enforce light text if the BG remains dark) */
+  --text-inverse-primary: #f8fafc;
+  --text-inverse-secondary: #94a3b8;
+
+  /* ACCENT */
+  --accent: #818cf8;
+  /* Indigo-400 */
+
+  /* BORDERS */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-semibold: rgba(255, 255, 255, 0.2);
+  --border-navbar: rgba(255, 255, 255, 0.1);
+  --border-inverse: rgba(255, 255, 255, 0.15);
+
+  /* COMPONENTS */
+  --chip-bg-primary: var(--color-indigo200);
+  --chip-bg-primary-hover: var(--color-indigo100);
+  --chip-text-primary: var(--color-indigo900);
+
+  --chip-bg-secondary: #334155;
+  --chip-bg-secondary-hover: #475569;
+  --chip-text-secondary: #e2e8f0;
+
+  --btn-bg-primary: var(--color-indigo200);
+  --btn-bg-primary-hover: var(--color-indigo100);
+  --btn-text-primary: var(--color-indigo900);
+
+  --btn-bg-secondary: #334155;
+  --btn-bg-secondary-hover: #475569;
+  --btn-text-secondary: #f8fafc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: var(--bg-page);
+}
+
+.containerLoading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.containerLoading p {
+  font-size: 1rem;
+  margin-top: 24px;
+  color: var(--text-primary);
+}
+
+.loading {
+  width: 50px;
+  height: 50px;
+  border-top: 6px solid var(--accent);
+  border-radius: 700px;
+  animation: spin 0.8s infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
