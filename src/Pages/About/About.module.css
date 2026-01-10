@@ -1,121 +1,106 @@
 .aboutSection {
-  background-color: var(--bg-surface);
-  transition: 0.3s ease-out;
-}
-
-.about {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem 2rem;
-}
-
-.about h2 {
-  text-align: center;
-  font-size: clamp(2.4rem, 4vw, 2.8rem);
-  font-weight: 600;
-  margin-bottom: clamp(4rem, 6vw, 5rem);
-  color: var(--accent);
-}
-
-.about h3 {
-  letter-spacing: 0;
-  opacity: 0.9;
-}
-
-.aboutIntro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2.5rem;
-  text-align: center;
-}
-
-.aboutIntro p {
-  max-width: 600px;
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-}
-
-.aboutImage {
   position: relative;
-  width: 300px;
-  height: 420px;
-  border-radius: 14px;
+  height: 300vh;
+  /* 3 slides = 300vh total height */
+  width: 100%;
+}
+
+.stickyContainer {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
   overflow: hidden;
-  border: 1px solid var(--border-semibold);
-  transition: transform 0.9s ease;
 }
 
-.aboutImage::before {
-  content: "";
+.slide {
   position: absolute;
-  inset: 0;
-  background-image: url("./../../assets/farel_picture.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  /* Hardware acceleration for smoother transforms */
+  will-change: transform;
+  /* Shadow to give depth to the floating cover effect */
+  box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-size: cover;
-  transform: scale(1);
-  transition: transform 0.6s ease;
+  background-position: center;
 }
 
-.aboutImage:hover::before {
-  transform: scale(1.08);
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top,
+      rgba(2, 6, 23, 0.9) 0%,
+      /* Slate-950 strong gradient */
+      rgba(2, 6, 23, 0.4) 40%,
+      rgba(2, 6, 23, 0.1) 100%);
+  z-index: 1;
 }
 
-.aboutStory {
-  margin-top: clamp(5rem, 8vw, 8rem);
-  display: grid;
-  gap: clamp(3rem, 6vw, 5rem);
+.contentWrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem 6rem 2rem;
+  box-sizing: border-box;
+  pointer-events: none;
+  /* Let clicks pass through overlay if needed */
 }
 
-.storyBlock {
-  max-width: 720px;
+.textContent {
+  max-width: 700px;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  pointer-events: auto;
 }
 
-.storyBlock::before {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 2px;
-  background-color: #4f46e5;
-  margin-bottom: 1.5rem;
-}
-
-.storyBlock h3 {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+.title {
+  font-family: "Outfit", sans-serif;
+  font-size: 5rem;
+  font-weight: 700;
   color: var(--text-primary);
+  /* Use global var */
+  margin-bottom: 1.5rem;
+  line-height: 1;
+  letter-spacing: -2px;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
-.storyBlock p {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--text-secondary);
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.active {
-  opacity: 1;
-  transform: translateY(0);
+.text {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: var(--text-pdf);
+  /* Fallback */
+  color: rgba(248, 250, 252, 0.85);
+  /* Slate-50 opacity */
+  font-weight: 300;
+  border-left: 2px solid var(--accent);
+  padding-left: 1.5rem;
 }
 
 @media (max-width: 768px) {
-  .about {
-    padding: 4rem 1rem;
+  .title {
+    font-size: 3rem;
   }
-  .aboutIntro p {
-    font-size: 1rem;
-  }
-  .aboutImage {
-    width: 280px;
-    height: 380px;
+
+  .text {
+    font-size: 1.1rem;
   }
 }
