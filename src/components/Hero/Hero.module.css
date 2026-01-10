@@ -3,14 +3,7 @@
   grid-template-columns: 1.2fr 1fr;
   align-items: center;
   gap: clamp(3rem, 8vw, 12rem);
-  margin: 4rem auto;
-}
-
-@media (max-width: 1024px) {
-  .hero {
-    grid-template-columns: 1fr;
-    min-height: max-content;
-  }
+  padding: 4rem 1rem;
 }
 
 .heroLabel {
@@ -32,14 +25,11 @@
 }
 
 .heroContent {
-  max-width: 600px;
-  width: 100%;
-  padding: 24px;
   line-height: 1.2;
 }
 
 .heroContent h2 {
-  font-size: clamp(3.4rem, 6vw, 4.2rem);
+  font-size: clamp(3.2rem, 4vw, 3.8rem);
   font-weight: 700;
   text-transform: uppercase;
   color: var(--text-primary);
@@ -109,4 +99,19 @@
 
 .heroImage:hover::before {
   transform: scale(1.08);
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: max-content;
+  }
+  .heroVisual::before {
+    inset: 0;
+  }
+  .heroImage {
+    width: 320px;
+    height: 420px;
+    margin-top: 2rem;
+  }
 }

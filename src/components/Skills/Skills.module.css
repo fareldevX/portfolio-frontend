@@ -7,7 +7,7 @@
   position: sticky;
   top: 0;
   height: 100vh;
-  padding: 0 4rem;
+  padding: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -101,11 +101,21 @@
 }
 
 @media (max-width: 768px) {
-  .skillsSticky {
-    padding: 4rem 1.5rem;
+  .skillsSection {
+    height: auto;
   }
-
+  .skillsSticky {
+    height: auto;
+    padding: 4rem 1rem;
+  }
   .description {
     line-height: 1.5;
+  }
+  .skillsTrack {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card {
+    min-width: 100%;
   }
 }

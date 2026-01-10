@@ -44,7 +44,6 @@ function Hero() {
           <div className={styles.heroImage}></div>
         </div>
       </Container>
-      <div className={styles.heroCover}></div>
     </Section>
   );
 }

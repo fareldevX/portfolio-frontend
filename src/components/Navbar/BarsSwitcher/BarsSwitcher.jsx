@@ -50,6 +50,7 @@ function BarsSwitcher({ isOpen, setIsOpen }) {
         <div className={styles.navLinksMobile}>
           {navItems.map(({ label, id }) => (
             <button
+              key={id}
               className={`${styles.navItemMobile} ${
                 isHome && activeSection === id ? styles.active : ""
               }`}

@@ -7,7 +7,6 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  margin-bottom: -3.2rem;
   z-index: 1;
 }
 
@@ -39,7 +38,7 @@
 }
 
 .quoteContent h2 {
-  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  font-size: clamp(1.4rem, 3vw, 2.6rem);
   line-height: 1.5;
   font-weight: 600;
 }
