@@ -74,8 +74,8 @@
   font-family: "Outfit", sans-serif;
   font-size: 5rem;
   font-weight: 700;
-  color: var(--text-primary);
-  /* Use global var */
+  color: #ffffff;
+  /* Always white for contrast on dark images */
   margin-bottom: 1.5rem;
   line-height: 1;
   letter-spacing: -2px;
@@ -86,9 +86,7 @@
   font-family: "Inter", sans-serif;
   font-size: 1.5rem;
   line-height: 1.6;
-  color: var(--text-pdf);
-  /* Fallback */
-  color: rgba(248, 250, 252, 0.85);
+  color: rgba(248, 250, 252, 0.9);
   /* Slate-50 opacity */
   font-weight: 300;
   border-left: 2px solid var(--accent);
