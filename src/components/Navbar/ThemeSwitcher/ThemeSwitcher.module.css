@@ -20,10 +20,10 @@
 
 .dropdown {
   position: absolute;
-  top: 120%;
+  top: 130%;
   right: 0;
   padding: 4px;
-  background-color: var(--bg-surface);
+  background-color: var(--bg-section);
   border: 1px solid var(--border-subtle);
   border-radius: 6px;
   min-width: 120px;
@@ -45,6 +45,6 @@
 }
 
 .dropdown button:hover {
-  background-color: var(--chip-bg-secondary);
-  color: var(--accent);
+  background-color: var(--accent);
+  color: #fff;
 }

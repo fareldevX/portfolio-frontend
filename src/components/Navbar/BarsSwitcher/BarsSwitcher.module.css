@@ -56,10 +56,11 @@
 
 .navItemMobile.active {
   font-weight: 500;
-  background-color: var(--chip-bg-secondary);
-  color: var(--accent);
+  background-color: var(--accent);
+  color: #fff;
 }
 
 .navItemMobile:hover {
-  background-color: var(--chip-bg-secondary);
+  background-color: var(--accent);
+  color: #fff;
 }

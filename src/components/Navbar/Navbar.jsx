@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import useScrollActive from "../../Hooks/useScrollActive";
 import { scrollToSection } from "../../utils/scrollToSection";
@@ -8,6 +8,7 @@ import BarsSwitcher from "./BarsSwitcher/BarsSwitcher";
 import styles from "./Navbar.module.css";
 
 function Navbar() {
+  const [showNavbar, setShowNavbar] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
@@ -34,10 +35,17 @@ function Navbar() {
 
   useScrollActive(navItems, setActiveSection);
 
+  useEffect(() => {
+    const timer = setInterval(() => setShowNavbar(true), 200);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <nav className={styles.float}>
       <Container
-        className={`${styles.navbar} ${isMobileOpen && styles.navbarOpen}`}
+        className={`${styles.navbar} ${isMobileOpen && styles.navbarOpen} ${
+          showNavbar ? styles.fadeIn : ""
+        }`}
       >
         <div className={styles.navContent}>
           <div className={styles.navLogo}>
