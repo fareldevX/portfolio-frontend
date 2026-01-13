@@ -8,7 +8,7 @@ import BarsSwitcher from "./BarsSwitcher/BarsSwitcher";
 import styles from "./Navbar.module.css";
 
 function Navbar() {
-  const [showNavbar, setShowNavbar] = useState(false);
+  const [entered, setEntered] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
@@ -36,7 +36,7 @@ function Navbar() {
   useScrollActive(navItems, setActiveSection);
 
   useEffect(() => {
-    const timer = setInterval(() => setShowNavbar(true), 200);
+    const timer = setInterval(() => setEntered(true), 200);
     return () => clearInterval(timer);
   }, []);
 
@@ -44,7 +44,7 @@ function Navbar() {
     <nav className={styles.float}>
       <Container
         className={`${styles.navbar} ${isMobileOpen && styles.navbarOpen} ${
-          showNavbar ? styles.fadeIn : ""
+          entered ? styles.entered : ""
         }`}
       >
         <div className={styles.navContent}>

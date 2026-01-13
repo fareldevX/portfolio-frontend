@@ -46,24 +46,22 @@ function BarsSwitcher({ isOpen, setIsOpen }) {
         <FaBars size={20} />
       </button>
 
-      {isOpen && (
-        <div className={styles.navLinksMobile}>
-          {navItems.map(({ label, id }) => (
-            <button
-              key={id}
-              className={`${styles.navItemMobile} ${
-                isHome && activeSection === id ? styles.active : ""
-              }`}
-              onClick={() => {
-                handleNavClick(id);
-                setIsOpen((prev) => !prev);
-              }}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
-      )}
+      <div className={`${styles.navLinksMobile} ${isOpen ? styles.open : ""}`}>
+        {navItems.map(({ label, id }) => (
+          <button
+            key={id}
+            className={`${styles.navItemMobile} ${
+              isHome && activeSection === id ? styles.active : ""
+            }`}
+            onClick={() => {
+              handleNavClick(id);
+              setIsOpen((prev) => !prev);
+            }}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

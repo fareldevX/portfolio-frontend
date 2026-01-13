@@ -36,8 +36,18 @@
   background: var(--bg-navbar-open);
   border: 1px solid var(--border-navbar);
   border-radius: 2rem;
+  opacity: 0;
+  transform: translateY(-8px) scale(0.98);
+  pointer-events: none;
   width: 100%;
   overflow: hidden;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
 }
 
 .navItemMobile {
